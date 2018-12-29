@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <link rel="shurtcut icon" type="image/x-icon" href="imgage/favicon.png">
+      <link rel="stylesheet" href="css/navbar-fixed.css">
+      <link rel="stylesheet" href="css/font-awesome.min.css">
+      <link rel="stylesheet" href="css/bootstrap.css">
+      <link rel="stylesheet" href="css/style1.css">
+      <title>University admition information</title>
+   </head>
+   <body>
+   <!--MANU-->
+      <nav class="navbar navbar-light navbar-expand-lg py-3 fixed-top">
+        <div class="container">
+          <button class="navbar-toggler navbar-toggler-right" data-toggle="collapse" data-target="#navbarNav">
+           <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+               <ul class="navbar-nav ml-auto">
+                  <li class="nav-item">
+                     <a class="nav-link" href = "#feedback">Update Form</a>
+                  </li>
+               </ul>
+            </div>
+           </div>
+         </nav>
+	 <!--U-->
+	 <script type="text/javascript">
+			function validation(){
+				var user = document.getElementById('username').value;
+				var email = document.getElementById('useremail').value;
+				var pass = document.getElementById('userpass').value;
+				var contact = document.getElementById('contac').value;
+				
+				if(user == ""){
+					document.getElementById('usernameid').innerHTML = "**please fill the username";
+					return false;
+				}
+				if((user.length < 3)||(user.length > 20)){
+					document.getElementById('usernameid').innerHTML = "**please fill the username between 3 and 20";
+					return false;
+				}
+				if(!isNaN(user)){
+					document.getElementById('usernameid').innerHTML = "**please enter character";
+					return false;
+				}
+				if(pass == ""){
+					document.getElementById('Passwords').innerHTML = "**please fill the password";
+					return false;
+				}
+				if((pass.length < 8)||(pass.length > 20)){
+					document.getElementById('Passwords').innerHTML = "**please fill the Passwords between 8 and 20";
+					return false;
+				}
+				if(email == ""){
+					document.getElementById('emailids').innerHTML = "**please fill the email";
+					return false;
+				}
+				if(email.indexOf('@') <= 0){
+					document.getElementById('emailids').innerHTML = "**please fill the email id in proper format @";
+					return false;
+				}
+				if((email.charAt(email.length-4)!= '.')&& (email.charAt(email.length-3)!= '.')){
+					document.getElementById('emailids').innerHTML = "**please fill the email id in proper format .";
+					return false;
+				}
+				
+				
+				if(contact == ""){
+					document.getElementById('mobiles').innerHTML = "**please enter disits";
+					return false;
+				}
+				if(isNaN(contact)){
+					document.getElementById('mobiles').innerHTML = "**please enter must be digit";
+					return false;
+				}
+			}
+		</script>
+	 <section id="feedback">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-3">
+					
+				</div>
+				<div class="col-md-6">
+					<div class="panel-panel-default">
+					<h4 class="py-5 text-center">Owner form</h4>
+						<form method="POST" action="owner-form.php" onsubmit="return validation();">
+							<div class="form-group">
+							 <label for="nn">Username:</label>
+							 <input type="text" class="form-control" name="un" id="username" placeholder=""/>
+							 <span class="text-danger font-weight-bold" id="usernameid"></span>
+							</div>
+							<div class="form-group">
+							 <label for="nn">Email:</label>
+							 <input type="text" class="form-control" name="em" id="useremail"placeholder=""/>
+							 <span class="text-danger font-weight-bold" id="emailids"></span>
+							</div>
+							<div class="form-group">
+							 <label for="nn">password:</label>
+							 <input type="password" class="form-control" name="ps" id="userpass"placeholder=""/>
+							 <span class="text-danger font-weight-bold" id="Passwords"></span>
+							</div>
+							<div class="form-group">
+							 <label for="nn">Contact_us:</label>
+							 <input type="text" class="form-control" name="ct" id="contac" placeholder=""/>
+							 <span class="text-danger font-weight-bold" id="mobiles"></span>
+							</div>
+							<input type="submit" class="form-control bg-primary text-light" value="Submit"/>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	 </section>
+		
+	  <script src="js/jquery.min.js"></script>
+      <script src="js/popper.min.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+      <script src="js/navbar-fixed.js"></script>
+      </body>
+      </html>

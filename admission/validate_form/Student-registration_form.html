@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <link rel="stylesheet" href="css/bootstrap.css">
+      <link rel="stylesheet" href="css/style1.css">
+      <title>University admition information</title>
+
+      <style>
+         #ui{
+       
+         padding: 30px;
+         margin-top: 50px;
+         border-radius: 10px;
+         opacity: 0.8;
+         }
+         #ui input{
+         border-radius: 4px;
+         }
+      </style>
+      <script type="text/javascript">
+			function validation(){
+				var fuser = document.getElementById('username').value;
+				var luser = document.getElementById('lusername').value;
+				var email = document.getElementById('uemail').value;
+				var pass = document.getElementById('password').value;
+				var A_pass = document.getElementById('password_again').value;
+				var mobile = document.getElementById('mobile_no').value;
+				
+				if(fuser == ""){
+					document.getElementById('username_error_msg').innerHTML = "**please fill the user first_name";
+					return false;
+				}
+				if(luser == ""){
+					document.getElementById('userlname_error_msg').innerHTML = "**please fill the user first_name";
+					return false;
+				}
+				
+				if(pass == ""){
+					document.getElementById('password_error_msg').innerHTML = "**please fill the password";
+					return false;
+				}
+				if((pass.length < 8)||(pass.length > 20)){
+					document.getElementById('password_error_msg').innerHTML = "**please fill the Passwords between 8 and 20";
+					return false;
+				}
+				if(A_pass == ""){
+					document.getElementById('Password_again_error_msg').innerHTML = "**please fill the matching password";
+					return false;
+				}
+				if(pass != A_pass){
+					document.getElementById('Password_again_error_msg').innerHTML = "**password are not matching";
+					return false;
+				}
+				
+				if(email == ""){
+					document.getElementById('email_error_msg').innerHTML = "**please fill the email";
+					return false;
+				}
+				
+				if(email.indexOf('@') <= 0){
+					document.getElementById('email_error_msg').innerHTML = "**please fill the email id in proper format @";
+					return false;
+				}
+				
+				if((email.charAt(email.length-4)!= '.')&& (email.charAt(email.length-3)!= '.')){
+					document.getElementById('email_error_msg').innerHTML = "**please fill the email id in proper format .";
+					return false;
+				} 
+				
+				
+				if(mobile == ""){
+					document.getElementById('mobile_no_error_msg').innerHTML = "**Mandatory field";
+					return false;
+				}
+				
+				if(isNaN(mobile)){
+					document.getElementById('mobile_no_error_msg').innerHTML = "**Please enter disits not character";
+					return false;
+				}
+			}
+		</script>
+   </head>
+   <body>
+      <!--Registraion form-->
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-3"></div>
+            <div class="col-lg-6">
+               <div id="ui" class="border border-dark">
+                  <h2 class="text-center ">Registraion_form(Student)</h2>
+                  <form class="form-group text-center" id="myform" action="student_regi.php" onsubmit="return validation()" method="POST">
+                     <div class="row">
+                        <div class="col-lg-6 my-3">
+                           <label >First Name:</label>
+                           <input name="fname" type="text" id="username" class="form-control" placeholder="Enter your first name"/>
+                           <span class="text-danger font-weight-bold" id="username_error_msg"></span>
+                        </div>
+                        <div class="col-lg-6 my-3">
+                           <label >Last Name:</label>
+                           <input name="lname"type="text" id="lusername" class="form-control" placeholder="Enter your last name"/>
+                           <span class="text-danger font-weight-bold" id="userlname_error_msg"></span>
+                        </div>
+                     </div>
+                     <br/>
+                     <label >E-mail</label>
+                     <input name="email" type="email" id="uemail" class="form-control" placeholder="Enter your E-mail...."/>
+                     <span class="text-danger font-weight-bold" id="email_error_msg"></span>
+                     <div class="row">
+                        <div class="col-lg-6 my-3">
+                           <label >Password:</label>
+                           <input name="pass" type="password" id="password" class="form-control" placeholder="Enter new password"  />
+                           <span class="text-danger font-weight-bold" id="password_error_msg"></span>
+                        </div>
+                        <div class="col-lg-6 my-3">
+                           <label >Password_again:</label>
+                           <input name="re_pass"type="password" id="password_again" class="form-control" placeholder="Re-type again" />
+                           <span class="text-danger font-weight-bold" id="Password_again_error_msg"></span>
+                        </div>
+                     </div>
+                     <div class="row">
+                        <div class="col-lg-6 my-3">
+							<label >Mobile number:</label>
+                           <input name="Mnum"class="form-control my-3" type="text" placeholder="Mobile No." id="mobile_no" />
+                           <span class="text-danger font-weight-bold" id="mobile_no_error_msg"></span>
+                        </div>
+                     </div>
+                     <div class="row">
+                        <div class="col-lg-12 my-3">
+                           <label class=" display-6">Gender:</label>
+                           <input type="radio" value="male" name="sex"/><label class=" my-3 display-7">Male</label>
+                           <input type="radio" value="female" name="sex"/><label class=" my-3 display-7">Female</label>
+                        </div>
+                     </div>
+                     <div class="row">
+                        <div class="col-lg-12 my-3">
+                           <input type="checkbox"  name=""/><label class=" my-3 display-5">Are you sure?</label>
+                        </div>
+                     </div>
+                     <br/>
+                     <input type="submit"  value="submit"/>
+                     <!-- <span class=""></span> -->
+                  </form>
+               </div>
+            </div>
+         </div>
+      </div>
+      <script src="js/jquery.min.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+   </body>
+</html>
