@@ -1,0 +1,26 @@
+body{}
+.height{
+	min-height:600px;
+	
+	text-align: center;
+	margin-top: 20px;
+	
+}
+.th{
+	
+	width: 60;
+}
+h3{
+	color: #218C95;
+}
+/*menu*/
+.content{
+	width:100%;
+	float: left;
+}
+.menu{
+	width: 40%;
+}
+.formr{
+	width: 50%;
+}

@@ -1,0 +1,129 @@
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <link rel="shurtcut icon" type="image/x-icon" href="imgage/favicon.png">
+      <link rel="stylesheet" href="css/navbar-fixed.css">
+      <link rel="stylesheet" href="css/font-awesome.min.css">
+      <link rel="stylesheet" href="css/bootstrap.css">
+      <link rel="stylesheet" href="css/style1.css">
+      <title>University admition information</title>
+   </head>
+   <body>
+   <div class="container">
+		<h1 class="text-center text-success">Owner registration form</h1>
+		<div class="col-lg-8 m-auto d-block">
+			<form action="owner_regi.php" method="POST" onsubmit="return validation()" class="bg-light">
+				<div class="form-group">
+					<label>Username:</label>
+					<input type="text" name="username" id="username" class="form-control" autocomplete="off"/>
+					<span class="text danger font-weight-bold" id="usernameid"></span>
+				</div>
+				<div class="form-group">
+					<label>Password:</label>
+					<input type="password" name="password" id="password" class="form-control" autocomplete="off"/>
+					<span class="text danger font-weight-bold"id="passwords"></span>
+				</div>
+				<div class="form-group">
+					<label>Retype_Password:</label>
+					<input type="password" name="retype_password" id="passwordconfrm" class="form-control" autocomplete="off"/>
+					<span class="text danger font-weight-bold"id="confrmpassword"></span>
+				</div>
+				<div class="form-group">
+					<label>Email:</label>
+					<input type="text" name="email" id="emailid" class="form-control" autocomplete="off"/>
+					<span class="text danger font-weight-bold" id="emailids"></span>
+				</div>
+				<div class="form-group">
+					<label>Mobile Number:</label>
+					<input type="text" name="mobile_number" id="numbermobile" class="form-control" autocomplete="off"/>
+					<span class="text danger font-weight-bold"id="mobilenumber"></span>
+				</div>
+				<input type="submit" name="submit" value="Submit"/>
+			</form>
+		</div>
+   </div>
+   <script type="text/javascript">
+		function validation(){
+			var user = document.getElementById('username').value;
+			var password = document.getElementById('password').value;
+			var confrmpassword = document.getElementById('passwordconfrm').value;
+			var email = document.getElementById('numbermobile').value;
+			var mobileno = document.getElementById('emailid').value;
+			
+			if(user == ""){
+				document.getElementById('usernameid').innerHTML = "**please fill in the username field";
+				return false;
+			}
+			
+			if((user.length < 3)||(user.length > 20)){
+				document.getElementById('usernameid').innerHTML = "**please fill the username between 3 and 20";
+				return false;
+			}
+			
+			if(!isNaN(user)){
+				document.getElementById('usernameid').innerHTML = "**please enter character";
+				return false;
+			}
+			
+			if(password == ""){
+				document.getElementById('passwords').innerHTML = "**please fill in the password field";
+				return false;
+			}
+			
+			if((password.length < 8)||(password.length > 20)){
+				document.getElementById('passwords').innerHTML = "**please fill in the password between 8 or 20";
+				return false;
+			}
+			
+			if(confrmpassword == ""){
+				document.getElementById('confrmpassword').innerHTML = "**please type again before password";
+				return false;
+			}
+			
+			if(password != confrmpassword){
+				document.getElementById('confrmpassword').innerHTML = "**password are not matching";
+				return false;
+			}
+			
+			
+			
+			
+			if(email == ""){
+				document.getElementById('emailids').innerHTML = "**please fill in the email field";
+				return false;
+			}
+			
+			//if(email.indexOf('@') <= 0){
+				//document.getElementById('emailids').innerHTML = "**please fill in the email id proper format @";
+				//return false;
+			//}
+			
+			//if((email.charAt(email.length-4)!='.') && (email.charAt(email.length-4!='.')){
+				//document.getElementById('emailids').innerHTML = "**please fill in the email id proper format .";
+				//return false;
+			//}
+			
+			if(mobileno == ""){
+				document.getElementById('mobilenumber').innerHTML = "**please fill in the mobile number field";
+				return false;
+			}
+			
+			<!-- if(mobileno.length != 12){
+				//document.getElementById('mobilenumber').innerHTML = "**the mobile number should be 12 disits";
+				//return false;
+			//}
+			
+			//if(isNaN(mobileno)){
+			//	document.getElementById('mobilenumber').innerHTML = "**the mobile number should be number not be character";
+			//	return false;
+			//} -->
+		}
+   </script>
+   <script src="js/jquery.min.js"></script>
+      <script src="js/popper.min.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+      <script src="js/navbar-fixed.js"></script>
+   </body>
+</html>

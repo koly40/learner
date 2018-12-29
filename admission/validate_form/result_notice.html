@@ -1,0 +1,147 @@
+
+	  <!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <link rel="shurtcut icon" type="image/x-icon" href="imgage/favicon.png">
+      <link rel="stylesheet" href="css/navbar-fixed.css">
+      <link rel="stylesheet" href="css/font-awesome.min.css">
+      <link rel="stylesheet" href="css/bootstrap.css">
+      <link rel="stylesheet" href="css/style1.css">
+      <title>University Result Notice information</title>
+	  <script language="javaScript">
+	  
+			function validat(){
+				var title = document.getElementById("text").value;
+				var Admission_type = document.getElementById("selection").option;
+				var University = document.getElementById("select_option").option;
+				var S_date = document.getElementById("star_date").value;
+				var E_date = document.getElementById("end_date").value;
+				
+				var notice_link = document.getElementById("NL").value;
+				if(title == ""){
+					document.getElementById('titleid').innerHTML = "** please enter the title";
+					return false;
+				}
+				
+				if(Admission_type == ""){
+					document.getElementById('selectionid').innerHTML = "Please select university type";
+					return false;
+				}
+				if(University == ""){
+					document.getElementById('selectionid_2').innerHTML = "Please select university name";
+					return false;
+				}
+				if(S_date == ""){
+					document.getElementById('startid').innerHTML = "**Mandatory field";
+					return false;
+				}
+				if(E_date == ""){
+					document.getElementById('endid').innerHTML = "**Mandatory field";
+					return false;
+				}
+				
+				
+				if(notice_link == ""){
+					document.getElementById('noticeid').innerHTML = "** please enter the link";
+					return false;
+				}
+				
+			}
+	  </script>
+   </head>
+   <body>
+     
+      <!--Notice section-->
+      <section id="Notice">
+         <div class="container">
+         <div class="row">
+		  <div class="col-lg-3"></div>
+            <div class="col-lg-6">
+               <h3 class="my-5 text-center"> Result Notice</h3>
+               <div class="card color">
+                  <div class="card-body">
+                     <form action="result_notice.php" onsubmit="return validat()" method="POST">
+                        <div class="container">
+                           <h1 align="center"> Result Notice Entry</h1>
+                           <br>
+                           <div class="row">
+                              <div class="col-md-12">
+                                 <div class="form-group">
+                                    <label for="title">Title:</label>
+                                    <input type="text" class="form-control" name="title" id="text">
+									<span id="titleid" class="text-danger font-weight-bold"></span>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="row">
+                              <div class="col-md-6">
+                                 <div class="form-group">
+                                    <label for="Admission_type">Please select admission type :</label>
+                                    <select class="form-control" name="Admission_type" id="selection">
+                                       <option>Undergraduate</option>
+                                       <option>Post Graduate</option>
+                                       <option>Masters</option>
+                                       <option>M.phil</option>
+                                    </select>
+									<span id="selectionid" class="text-danger font-weight-bold"></span>
+                                 </div>
+                              </div>
+                              <div class="col-md-6">
+                                 <div class="form-group">
+                                    <label for="uni_id">University :</label>
+                                    <select class="form-control" name="University" id="select_option">
+                                       <option>Dhaka University </option>
+                                       <option>Rajshahi University </option>
+                                       <option>Comilla University </option>
+                                       <option>Khulna University </option>
+                                       <option>Barishal University</option>
+                                       <option>jessore University</option>
+                                       <option>Jagannath University</option>
+                                    </select>
+									<span id="selectionid_2" class="text-danger font-weight-bold"></span>
+                                 </div>
+                              </div>
+							  
+                              <div class="col-md-12">
+                                 <div class="form-group">
+                                    <label for="Start_app">Result Publication date:</label>
+                                    <input type="date" class="form-control" name="S_date" id="star_date">
+									<span id="startid" class="text-danger font-weight-bold"></span>
+                                 </div>
+                              </div>
+                              <div class="col-md-12">
+                                 <div class="form-group">
+                                    <label for="End_app">Ending date:</label>
+                                    <input type="date" class="form-control" name="E_date" id="end_date">
+									<span id="endid" class="text-danger font-weight-bold"></span>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="row">
+                              
+                              <div class="col-md-12">
+                                 <div class="form-group">
+                                    <label for="Notice_link ">Notice Link:</label>
+                                    <input type="text" class="form-control" name="notice_link" id="NL">
+									<span id="noticeid" class="text-danger font-weight-bold"></span>
+                                 </div>
+                              </div>
+                           </div>
+                           <button type="submit" class="btn btn-primary form-control" onclick="validat()">Submit</button>
+                     </form>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+		 </div>
+      </section>
+      <script src="js/jquery.min.js"></script>
+      <script src="js/popper.min.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+      <script src="js/navbar-fixed.js"></script>
+   </body>
+</html>
