@@ -1,0 +1,19 @@
+
+/* customized carousel */
+.carousel {
+    height: 600px;
+    margin-bottom: 50px;
+}
+.carousel-caption {
+    z-index: 10;
+}
+.carousel .item {
+    background-color: rgba(40, 200, 100, 0.5);
+    height: 800px;
+}
+.panel-ht{
+	height:200px;
+}
+.banner{
+	margin: 0 auto;
+}

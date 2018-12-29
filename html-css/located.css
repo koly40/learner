@@ -1,0 +1,33 @@
+body{
+	padding: 0;
+	margin: 0;
+}
+.menu{
+	width: 100%;
+	height:20%;
+	background: #87827B;
+	
+}
+.menu ul{
+	text-align: center;
+	
+}
+.menu ul li a{
+	color: white;
+}
+.menu ul li a:hover{
+	background: black;
+	color:white;
+}
+.footer{
+	width: 100%;
+	background-color:#87827B  ;
+	height: 9%;
+}
+.footer , .connect{
+	padding: 15px;
+	
+}
+.footer , .connect a{
+	text-align: center;
+}

@@ -1,0 +1,43 @@
+body{
+	margin: 0;
+	padding: 0;
+}
+
+
+.wrapper{
+	max-width: 1170px;
+	width:100%;
+	margin: 20px auto;
+}
+
+
+.banner{
+	width:100%;
+	float:left;
+	margin: 50px auto 15px auto;
+}
+
+.ancor{
+	text-align: center;
+}
+.ancor a{
+	
+	display:inline-block;
+	height:5%;
+	padding:20px;
+	margin-top:20px;
+	
+}
+.link{
+	text-align: center;
+}
+.link a{
+	
+	display:inline-block;
+	height:5%;
+	padding:20px;
+	margin-top:20px;
+	
+}
+
+

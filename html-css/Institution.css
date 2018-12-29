@@ -1,0 +1,23 @@
+body{
+	padding: 0;
+	margin: 0;
+}
+.hhh{
+	list-style: none;
+	text-align:center;
+}
+.hhh ul li a{
+	text-decoration:none;
+}
+.footer{
+	width: 100%;
+	background-color:#87827B ;
+	height: 9%;
+}
+.footer , .connect{
+	padding: 15px;
+	
+}
+.footer , .connect a{
+	text-align: center;
+}
